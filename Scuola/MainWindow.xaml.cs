@@ -36,7 +36,7 @@ namespace Scuola
         {
             try
             {
-                if (txtNome.Text == "" || txtCognome.Text == "")
+                if (txtNome.Text == null || txtCognome.Text == null)
                 {
                     MessageBox.Show("Inserire tutti i valori", "", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     txtNome.Text = "";
@@ -70,7 +70,7 @@ namespace Scuola
         {
             try
             {
-                if (txtMateria.Text == "" || txtPrezzo.Text == "")
+                if (txtMateria.Text == null || txtPrezzo.Text == null)
                 {
                     MessageBox.Show("Inserire tutti i valori", "", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     txtMateria.Text = "";
@@ -98,6 +98,32 @@ namespace Scuola
                 txtMateria.Text = "";
                 txtPrezzo.Text = "";
                 txtMateria.Focus();
+            }
+        }
+
+        private void btnCancella_Click(object sender, RoutedEventArgs e)
+        {
+            lsbRisultato.Items.Clear();
+        }
+
+        private void btnEsci_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnRegistraAcquisto_Click(object sender, RoutedEventArgs e)
+        {
+            int indexS = cmbStudenti.SelectedIndex;
+            int indexL = cmbLibri.SelectedIndex;
+            if (indexS == -1 || indexL == -1)
+            {
+                MessageBox.Show("Selezionare studente e libro!","", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+            else
+            {
+                lsbRisultato.Items.Add($"{studenti[indexS].Presentati()} acquista {libri[indexL].GetDescrizione()}.");
+                cmbStudenti.SelectedIndex = -1;
+                cmbLibri.SelectedIndex = -1;
             }
         }
     }

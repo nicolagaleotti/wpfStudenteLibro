@@ -23,5 +23,10 @@ namespace ScuolaLibrary
         {
             return ($"Matr:{Matricola} {Nome} {Cognome}");
         }
+
+        public string Presentati()
+        {
+            return $"Studente {Nome} {Cognome} di matricola {Matricola}";
+        }
     }
 }

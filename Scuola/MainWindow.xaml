@@ -103,9 +103,9 @@
                                     <RowDefinition Height="40"></RowDefinition>
                                 </Grid.RowDefinitions>
 
-                                <Button x:Name="btnRegistraAcquisto" Content="Registra Acquisto" Grid.Row="0" FontSize="20" FontWeight="Bold" Width="180" Height="35"/>
-                                <Button x:Name="btnCancella" Content="Cancella" Grid.Row="4" FontSize="20" FontWeight="Bold" Width="180" Height="35"/>
-                                <Button x:Name="btnEsci" Content="Esci" Grid.Row="5" FontSize="20" FontWeight="Bold" Width="180" Height="35"/>
+                                <Button x:Name="btnRegistraAcquisto" Content="Registra Acquisto" Grid.Row="0" FontSize="20" FontWeight="Bold" Width="180" Height="35" Click="btnRegistraAcquisto_Click"/>
+                                <Button x:Name="btnCancella" Content="Cancella" Grid.Row="4" FontSize="20" FontWeight="Bold" Width="180" Height="35" Click="btnCancella_Click"/>
+                                <Button x:Name="btnEsci" Content="Esci" Grid.Row="5" FontSize="20" FontWeight="Bold" Width="180" Height="35" Click="btnEsci_Click"/>
                             </Grid>
                         </StackPanel>
 
